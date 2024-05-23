@@ -1,14 +1,26 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
+import { GuessesArray } from './types';
 
-export const GuessInput = () => {
-  const [guess, setGuess] = useState('');
+interface IGuessInputProps {
+  guess: string;
+  guesses: GuessesArray;
+  setGuess: Dispatch<SetStateAction<string>>;
+  setGuesses: Dispatch<SetStateAction<GuessesArray>>;
+}
 
+export const GuessInput = ({ guess, guesses, setGuess, setGuesses }: IGuessInputProps) => {
   const handleGuess = (e: ChangeEvent<HTMLInputElement>) => setGuess(e.currentTarget.value.toUpperCase());
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({ guess });
-    setGuess('');
+
+    if (guesses.includes(guess)) {
+      window.alert(`You have already guessed "${guess}"`);
+    } else {
+      console.log({ guess });
+      setGuesses((prevGuesses = []) => [...prevGuesses, guess]);
+      setGuess('');
+    }
   }
 
   return (
