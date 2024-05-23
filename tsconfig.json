@@ -13,7 +13,6 @@
     "noEmit": true,
     "noEmitOnError": true,
     "paths": {
-      "@components": ["src/components/index"],
       "@components/*": ["src/app/components/*"],
     },
     "resolveJsonModule": true,
