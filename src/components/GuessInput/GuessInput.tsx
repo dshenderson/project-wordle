@@ -1,5 +1,5 @@
 import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
-import { GuessesArray } from './types';
+import { GuessesArray } from '../types';
 
 interface IGuessInputProps {
   guess: string;

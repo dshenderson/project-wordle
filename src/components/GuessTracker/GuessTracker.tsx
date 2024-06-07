@@ -1,5 +1,7 @@
+import { GuessesArray } from '../types';
+
 interface IGuessesProps {
-  guesses: (string | undefined)[];
+  guesses: GuessesArray;
 }
 
 export const GuessTracker = ({ guesses }: IGuessesProps) => guesses.length ? (

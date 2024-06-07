@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { sample } from '../../utils';
 import { WORDS } from '../../data';
-import { GuessInput } from './GuessInput';
-import { GuessTracker } from './GuessTracker';
-import { GuessesArray } from './types';
+import { GuessInput, GuessTracker } from '..';
+import { GuessesArray } from '../types';
 
 
 // Pick a random word on every pageload.
