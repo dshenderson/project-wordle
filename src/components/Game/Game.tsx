@@ -17,7 +17,7 @@ export const Game = () => {
 
   return (
     <>
-      <GuessTracker guesses={guesses} />
+      <GuessTracker answer={answer} guesses={guesses} />
       <GuessInput guess={guess} guesses={guesses} setGuess={setGuess} setGuesses={setGuesses} />
     </>
   );

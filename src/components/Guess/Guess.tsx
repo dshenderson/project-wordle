@@ -1,15 +1,23 @@
-import { range } from "src/utils";
+import { range } from 'src/utils';
+import { Status } from '../types';
 
-interface IGuessProps {
-  guess?: string;
+interface IValidatedGuess {
+  letter: string;
+  status: Status;
 }
 
-export const Guess = ({ guess = '' }: IGuessProps) => {
-  const letters = guess.split('');
+interface IGuessProps {
+  validatedGuess: IValidatedGuess[] | null;
+}
 
-  return <div className="guess">
-    {range(5).map((_, idx) => (
-      <span className="cell" key={'cell-' + idx}>{ letters[idx] ?? '' }</span>
-    ))}
-  </div>;
-};
+export const Guess = ({ validatedGuess }: IGuessProps) => (
+  <div className="guess">
+    {range(5).map((_, idx) => {
+      const letter = validatedGuess?.[idx].letter ?? '';
+      const classname = validatedGuess ? `cell ${validatedGuess[idx].status}` : 'cell';
+      return (
+        <span className={classname} key={'cell-' + idx}>{ letter }</span>
+      );
+    })}
+  </div>
+);
