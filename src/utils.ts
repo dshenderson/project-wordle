@@ -1,4 +1,4 @@
-export const sample = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+export const isNotNullOrUndefined = <T>(value: T): value is NonNullable<T> => value !== null && value !== undefined;
 
 export const range = (a: number, b?: number, step = 1) => {
   const output = [];
@@ -14,3 +14,5 @@ export const range = (a: number, b?: number, step = 1) => {
 
   return output;
 };
+
+export const sample = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];

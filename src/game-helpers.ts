@@ -2,19 +2,10 @@
  * Thanks to Github user dylano for supplying a more-accurate
  * solving algorithm!
  */
+import { Status } from 'src/enums';
+import { IResult } from 'src/types';
 
-enum Status {
-  Correct = 'correct',
-  Incorrect = 'incorrect',
-  Misplaced = 'misplaced',
-}
-
-interface IResult {
-  letter: string;
-  status: Status;
-}
-
-export function checkGuess(guess: string, answer: string) {
+export const checkGuess = (guess: string, answer: string) => {
   // This constant is a placeholder that indicates we've successfully
   // dealt with this character (it's correct, or misplaced).
   const SOLVED_CHAR = '✓';

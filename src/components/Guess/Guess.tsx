@@ -1,5 +1,5 @@
 import { range } from 'src/utils';
-import { Status } from '../types';
+import { Status } from 'src/enums';
 
 interface IValidatedGuess {
   letter: string;
