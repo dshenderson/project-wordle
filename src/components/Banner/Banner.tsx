@@ -1,12 +1,14 @@
 import { BannerVariant } from 'src/enums';
+import { RestartButton } from '../RestartButton';
 
 interface IBannerProps {
   answer: string;
   numberOfGuesses: number;
+  resetGame: () => void;
   variant: BannerVariant;
 }
 
-export const Banner = ({ answer, numberOfGuesses, variant }: IBannerProps) => (
+export const Banner = ({ answer, numberOfGuesses, resetGame, variant }: IBannerProps) => (
   <div className={`${variant} banner`}>
     {
       variant === BannerVariant.Happy ? (
@@ -18,5 +20,6 @@ export const Banner = ({ answer, numberOfGuesses, variant }: IBannerProps) => (
         <p>Sorry, the correct answer is <strong>{answer}</strong>.</p>
       )
     }
+    <RestartButton clickHandler={resetGame} />
   </div>
 );

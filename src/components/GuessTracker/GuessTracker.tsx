@@ -1,5 +1,5 @@
 import { NUM_OF_GUESSES_ALLOWED } from 'src/constants';
-import { checkGuess } from 'src/game-helpers';
+import { checkGuess } from 'src/helpers';
 import { GuessesArray } from 'src/types';
 import { range } from 'src/utils';
 import { Guess } from '..';
