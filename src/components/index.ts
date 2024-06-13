@@ -5,4 +5,5 @@ export { Guess } from './Guess';
 export { GuessInput } from './GuessInput';
 export { GuessTracker } from './GuessTracker';
 export { Header } from './Header';
+export { Keyboard } from './Keyboard';
 export { RestartButton } from './RestartButton';
